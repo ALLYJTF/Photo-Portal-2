@@ -6,6 +6,7 @@ from flask import Response
 
 import requests
 import secrets
+import re
 
 import flask
 from flask import request
@@ -108,6 +109,9 @@ def upload_photo():
     return render_template("photo-portal.html", username=username, photo_list=photos)
 
 
+# =============================================================================
+# FUNCTION -- Logging Out
+
 @app.route("/logout",methods=['POST'])
 def logout():
     app.logger.info("Logout called.")
@@ -115,12 +119,12 @@ def logout():
     user = flask.session["username"]
     flask.session.pop('username', None)
 
-    # Requirement 2.1 and 2.2
-    # Use the "user" variable above to determine which endpoint to redirect to
-    # Use assumption 1 to determine whether the user is admin user or general user
-
-    return flask.redirect("/admin")
-
+    # ASSIGNMENT 2 (R2.1, R2.2) 
+    pattern = r'[a-zA-Z0-9]+@gmail\.com' # Regular expression to match Gmail
+    if re.match(pattern, user):
+        return flask.redirect("/")
+    else:
+        return flask.redirect("/admin")
 
 
 # =============================================================================
@@ -179,7 +183,7 @@ def genlogin():
     app.logger.info(photos)
     app.logger.info("---")
 
-    flask.session["gmail"] = user
+    flask.session["username"] = user
 
     return render_template('photo-portal.html',
     						upload_form_display=upload_form_display,
@@ -202,6 +206,6 @@ def index():
  
 if __name__ == "__main__":
 
-    app.debug = False
+    app.debug = True
     app.logger.info('Portal started...')
     app.run(host='0.0.0.0', port=5009)
