@@ -1,0 +1,32 @@
+WRF Web App
+============
+
+
+Basic Information: 
+- Name: Aria Luo
+- eid: al53332
+- Bitbucketusername: arialuo@utexas.edu
+- Bitbucketrepo: https://bitbucket.org/aria-cs378/assignment2/src/main/ 
+- Comments: None
+
+Run 
+----
+1. python3 -m venv <$VENV_NAME> 
+2. source <$VENV_NAME>/bin/activate
+3. pip3 install -r requirements.txt
+4. python3 application.py
+
+
+Try
+---
+1. Open application url: 
+   -http://localhost:5009/admin
+2. Access the web app in the browser
+3. Login/Logout using any string as username/password 
+4. Login again using same user.
+
+Stop
+----
+1. Ctrl+C in the window where application.py was started
+
+

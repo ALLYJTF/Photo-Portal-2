@@ -48,3 +48,6 @@ Thumbs.db
 *.mov
 *.wmv
 
+
+# virtual env
+webapp_venv
