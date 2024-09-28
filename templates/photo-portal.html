@@ -9,7 +9,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<title>Personal Photo Portal</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 	<style type="text/css">
 		/* Style the form */
@@ -37,16 +38,23 @@
 		}
 	</style>
 
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+		crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 	<script src="../static/scripts/photo-portal.js"></script>
 </head>
 
 <body>
-	<div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+	<div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel"
+		aria-hidden="true">
 		<div class="modal-dialog modal-xl" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -74,18 +82,19 @@
 			</div>
 			<div class="col text-right">
 				<div class="dropdown">
-					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 						{{username}}
 						<span class="caret"></span>
 					</button>
 					<form id="settings-and-logout-form" action="logout" method="post">
-					<ul class="dropdown-menu text-center" aria-labelledby="dropdownMenu1">
-						<li><a href="#" onclick="show_settings()">Settings</a></li>
-						<li>
-							<hr class="dropdown-divider">
-						</li>
-						<li><a href="#" onclick="logout()">Logout</a></li>
-					</ul>
+						<ul class="dropdown-menu text-center" aria-labelledby="dropdownMenu1">
+							<li><a href="#" onclick="show_settings()">Settings</a></li>
+							<li>
+								<hr class="dropdown-divider">
+							</li>
+							<li><a href="#" onclick="logout()">Logout</a></li>
+						</ul>
 					</form>
 				</div>
 			</div>
@@ -95,33 +104,38 @@
 
 	<div class="container-fluid">
 		<div class="row  mvh-100 flex-column flex-md-row">
-			<div class="col-md-2 div_left" style="height:90vh;background-color: lightblue;float:left; margin-top:-16px;">
+			<div class="col-md-2 div_left"
+				style="height:90vh;background-color: lightblue;float:left; margin-top:-16px;">
 
 				<div class="row">
 					<!-- Requirement 5 
 						5.1 Add action and method properties to the search_form.
 					-->
 					<form id="search_form">
-					<label style="padding-left:10px;">Search</label>
-					<select id="search_select" name="search_select" style="margin-left:10px;">
-						<option value="Name">Name</option>
-						<option value="Date">Date</option>
-						<option value="Tags">Tags</option>
-					</select>
-					<input type="text" name="search_input" id="search_input" style="margin-left:10px">
-					<button name="search" style="margin-left:10px" onclick="return validate_data()">Search</button>
+						<label style="padding-left:10px;">Search</label>
+						<select id="search_select" name="search_select" style="margin-left:10px;">
+							<option value="Name">Name</option>
+							<option value="Date">Date</option>
+							<option value="Tags">Tags</option>
+						</select>
+						<input type="text" name="search_input" id="search_input" style="margin-left:10px">
+						<button name="search" style="margin-left:10px" onclick="return validate_data()">Search</button>
 					</form>
 				</div>
 				<hr>
 
 				<div class="row"> <!-- row2 -->
 					<div>
-					<ol id="photo_list">
-		                	{% for photo in photo_list %}
-		                	<li>
-        		          		<a href="#" onclick="show_photo_details('{{photo.name}}', '{{photo.date_taken}}', '{{photo.tags}}')"> {{ photo.name }} </a>
-                			</li>
-                			{% endfor %}
+						<!-- "photo_list" in the for loop is the variable passed from Flask's render_template(), 
+							 It is different from the id "photo_list" -->
+						<ol id="photo_list">
+							{% for photo in photo_list %}
+							<li>
+								<a href="#"
+									onclick="show_photo_details('{{photo.name}}', '{{photo.date_taken}}', '{{photo.tags}}')">
+									{{ photo.name }} </a>
+							</li>
+							{% endfor %}
 						</ol>
 					</div>
 				</div> <!-- row2 -->
@@ -134,39 +148,51 @@
 				<p></p>
 
 				<div style="{{upload_form_display}}" id="uploadPhotoFormDiv">
-					<form id="uploadPhotoForm" action="upload" method="post" enctype="multipart/form-data" style="margin-top:-10px;" >
+					<form id="uploadPhotoForm" action="upload" method="post" enctype="multipart/form-data"
+						style="margin-top:-10px;">
 
-					<label>Photo Name</label>
-					<input class="input" type="file" name="photo_name" id="photo_name" required>
-					<br>
-					<br>
-					<div class="tab1"><b style="color:blue;">Photo metadata</b>
-						<table>
-							<tr>
-								<td><label>Date taken</label></td>
-								<td><input type="text" name="date_taken" placeholder="MM/DD/YYYY" id="date_taken"></td>
-							</tr>
-							<tr>
-								<td><label>Tags</label></td>
-								<td><input type="text" name="tags" placeholder="comma separated tags" id="tags"></td>
-							</tr>
-						</table>
-						<button class="btn btn-primary">Submit</button>
-					</div>
+						<label>Photo Name</label>
+						<input class="input" type="file" name="photo_name" id="photo_name" required>
+						<br>
+						<br>
+						<div class="tab1"><b style="color:blue;">Photo metadata</b>
+							<table>
+								<tr>
+									<td><label>Date taken</label></td>
+									<td><input type="text" name="date_taken" placeholder="MM/DD/YYYY" id="date_taken">
+									</td>
+								</tr>
+								<tr>
+									<td><label>Tags</label></td>
+									<td><input type="text" name="tags" placeholder="comma separated tags" id="tags">
+									</td>
+								</tr>
+							</table>
+							<button class="btn btn-primary">Submit</button>
+						</div>
 					</form>
 				</div>
 			</div>
 
-			<div class="col-md-2 flex-grow-1 div_right" id="entity-form-container-2" style="height:90vh;background-color: lightblue;float:left; margin-top:-16px;">
+			<div class="col-md-2 flex-grow-1 div_right" id="entity-form-container-2"
+				style="height:90vh;background-color: lightblue;float:left; margin-top:-16px;">
 				<div class="row"> <!-- row2 -->
 					<div>
 						<h6>Thumbnails:</h6>
 						<ol id="available_photos_list">
-							<!-- Requirement 4.1, 4,2, 4.3 -->
-							<!-- See: 
-								1. https://jinja.palletsprojects.com/en/3.0.x/templates/ 
-                                				2. https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption
-							-->
+							<!-- ASSIGNMENT 2 R4.1, R4,2, R4.3 -->
+							{% for photo in photo_list %}
+							<figure>
+								<img src="..//static/images/photos/{{photo.name}}" width="60" height="60" data-toggle="modal"
+									onclick="preview_photo('{{photo.name}}')"
+									alt="{{photo.name}}"
+								/>
+								<figcaption>
+									{{ photo.name }}
+								</figcaption>
+
+							</figure>
+							{% endfor %}
 						</ol>
 					</div>
 				</div> <!-- row2 -->

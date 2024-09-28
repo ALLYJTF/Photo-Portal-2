@@ -103,10 +103,12 @@ def upload_photo():
     app.logger.info("Date taken:" + date_taken)
     app.logger.info("Tags:" + tags)
 
-    # Requirement 3
-    # 3.1 - Set the status and pass that in to photo_upload_status parameter.
-
-    return render_template("photo-portal.html", username=username, photo_list=photos)
+    # ASSIGNMENT 2 -- Setting photo status (R3)
+    status = "Photo " + filename + " uploaded successfully."
+    return render_template("photo-portal.html", 
+                           username=username, 
+                           photo_upload_status=status,
+                           photo_list=photos)
 
 
 # =============================================================================
