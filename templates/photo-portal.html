@@ -108,10 +108,8 @@
 				style="height:90vh;background-color: lightblue;float:left; margin-top:-16px;">
 
 				<div class="row">
-					<!-- Requirement 5 
-						5.1 Add action and method properties to the search_form.
-					-->
-					<form id="search_form">
+					<!-- ASSIGNEMNT 2: Added action + method (R5.1)-->
+					<form id="search_form" action="search_photo" method="post">
 						<label style="padding-left:10px;">Search</label>
 						<select id="search_select" name="search_select" style="margin-left:10px;">
 							<option value="Name">Name</option>
@@ -186,11 +184,11 @@
 								<img src="..//static/images/photos/{{photo.name}}" width="60" height="60" data-toggle="modal"
 									onclick="preview_photo('{{photo.name}}')"
 									alt="{{photo.name}}"
+									data-target="#imageModal"
 								/>
 								<figcaption>
 									{{ photo.name }}
 								</figcaption>
-
 							</figure>
 							{% endfor %}
 						</ol>
