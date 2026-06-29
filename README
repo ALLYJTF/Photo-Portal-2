@@ -1,14 +1,6 @@
 WRF Web App
 ============
 
-
-Basic Information: 
-- Name: Aria Luo
-- eid: al53332
-- Bitbucketusername: arialuo@utexas.edu
-- Bitbucketrepo: https://bitbucket.org/aria-cs378/assignment2/src/main/ 
-- Comments: None
-
 Run 
 ----
 1. python3 -m venv <$VENV_NAME> 
